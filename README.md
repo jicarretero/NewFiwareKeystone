@@ -7,6 +7,12 @@ You'll need **jq** and **python-openstackclient** installed so the script can pr
 ### Install JQ:
 There are several ways of installing jq, please check: https://stedolan.github.io/jq/
 
+    wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+    chmod 755 ./jq
+    sudo mv jq /usr/bin
+    sudo chown root.root /usr/bin/jq
+
+
 ### Install the latest python-openstackclient
 My personal preference is to install it in its own python virtualenv, but this is not stictly required.
 
