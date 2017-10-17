@@ -36,7 +36,7 @@ Now you can use the script ---
 
 ## user_create.sh
 
-    user_create some.email@example.com [community|trial]
+    user_create.sh some.email@example.com [community|trial]
 
 The script will get an email as 1st parameter and an optional second parameter which can be *community* or *trial*. 
 By default, it will assume the 2nd parameter to be community if it is not present.
@@ -48,3 +48,12 @@ The script follows a series of steps:
 - Assign the user's project to the endpoint group defined for OS_REGION_NAME
 
 Please, run with care.  
+
+## user_community_update.sh 
+
+    user_community_update.sh some.email@example.com [community|trial]
+
+The script will get an email as 1st parameter and an optional second parameter which can be *community* or *trial*. 
+By default, it will assume the 2nd parameter to be community if it is not present.
+
+The script checks that the user exists. If it does, it will update its information about community or trial account (duration and started_at will be set to today)

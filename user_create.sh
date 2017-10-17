@@ -22,7 +22,6 @@ project_name="$user_name cloud"
 echo "New User: " $email
 echo "Password: " $password
 
-tempfile=$(tempfile)
 date=$(date +%Y-%m-%d)
 
 # Check if the user exists. If it does, nothing is created
