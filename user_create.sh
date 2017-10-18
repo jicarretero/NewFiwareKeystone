@@ -56,7 +56,8 @@ d="{
 curl -H "X-Auth-token: ${token}" -H "content-type: application/json" ${OS_AUTH_URL}/users -d "${d}" -X POST 2>/dev/null
 
 # Add the new project and user to community or trial role
-openstack role add --project ${project_id} --user ${user_name} ${role}
+#openstack role add --project ${project_id} --user ${user_name} ${role}
+openstack role add --user ${user_name} --domain default ${role}
 
 ## Add the user to the Spain2 Group:
 ## endpoint_group 1d2.... belongs to Spain2
