@@ -13,8 +13,6 @@ region_id=${OS_REGION_NAME}
 [ ${role} == "community" ] && duration=270
 [ ${role} == "trial" ] && duration=15
 
-echo $duration
-
 password=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)
 
 project_name="$user_name cloud"
@@ -58,6 +56,7 @@ curl -H "X-Auth-token: ${token}" -H "content-type: application/json" ${OS_AUTH_U
 # Add the new project and user to community or trial role
 #openstack role add --project ${project_id} --user ${user_name} ${role}
 openstack role add --user ${user_name} --domain default ${role}
+openstack role add --user ${user_name} --project ${project_id} member
 
 ## Add the user to the Spain2 Group:
 ## endpoint_group 1d2.... belongs to Spain2
