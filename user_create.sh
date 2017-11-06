@@ -47,7 +47,8 @@ d="{
         \"name\": \"${user_name}\",
         \"password\": \"${password}\",
         \"${role}_started_at\": \"${date}\",
-        \"${role}_duration\": \"${duration}\"
+        \"${role}_duration\": \"${duration}\",
+        \"cloud_project_id\": \"${project_id}\"
     }
 }"
 
