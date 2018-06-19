@@ -32,3 +32,11 @@ d="{
 }"
 curl -H "X-Auth-Token: ${token}" -H "Content-Type: application/json" ${OS_AUTH_URL}/users/${user_id} -X PATCH -d "$d" 2>/dev/null
 
+cloud_project_id=$(openstack  user show -f value -c cloud_project_id ${user_name})
+
+echo
+
+if [ ! -z $cloud_project_id ]; then
+openstack role add --user ${user_id} --domain default community
+openstack role remove --user ${user_id} --domain default trial
+fi
