@@ -63,3 +63,10 @@ The script will get an email as 1st parameter and an optional second parameter w
 By default, it will assume the 2nd parameter to be community if it is not present.
 
 The script checks that the user exists. If it does, it will update its information about community or trial account (duration and started_at will be set to today)
+
+## user_delete_region.sh
+
+    user_delete_region.sh some.email@example.com REGION_NAME
+
+This script will remove the assignment of the user's *cloud_project_id* from a REGION. This means that a user will not be able to access the region anymore. If the region was the last one, the user will be disabled in Keystone. This will prevent the user to access Cloud services.
+
