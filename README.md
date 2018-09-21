@@ -64,9 +64,20 @@ By default, it will assume the 2nd parameter to be community if it is not presen
 
 The script checks that the user exists. If it does, it will update its information about community or trial account (duration and started_at will be set to today)
 
+## user_add_region.sh
+
+    user_add_region.sh some.email@example.com REGION_NAME
+
+This script will add  an assignment of the user's *cloud_project_id* to a REGION.
+
 ## user_delete_region.sh
 
     user_delete_region.sh some.email@example.com REGION_NAME
 
 This script will remove the assignment of the user's *cloud_project_id* from a REGION. This means that a user will not be able to access the region anymore. If the region was the last one, the user will be disabled in Keystone. This will prevent the user to access Cloud services.
 
+## user_change_region.sh
+
+    user_change_region.sh some.email@example.com REGION_NAME
+
+This script will remove the assignment of the user's *cloud_project_id* from the REGION it is assigned to, and it is assigned to the REGION_NAME region. It is not recommended to use this script if the user has several regions associated to its projects. It is recomended to delete de the region (user_delete_region.sh) and add a region (user_add_region.sh)
