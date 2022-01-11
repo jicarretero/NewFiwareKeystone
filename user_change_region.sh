@@ -3,7 +3,7 @@
 user=$1
 [ -z $user ] && (echo "necesita como parametro el usuario" ; exit 1)
 region_id=$2
-[ -z $region_id ] && (echo "Necesita region como parametro" ; exit 1)
+[ -z $new_region ] && (echo "Necesita region como parametro" ; exit 1)
 
 project_id=$(openstack user show ${user} | awk 'BEGIN {done=0}
      /cloud_project_id/ {id=$4 ; done=1}

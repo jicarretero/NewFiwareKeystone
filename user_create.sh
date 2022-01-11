@@ -13,7 +13,9 @@ region_id=${OS_REGION_NAME}
 [ ${role} == "community" ] && duration=270
 [ ${role} == "trial" ] && duration=15
 
-password=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)
+echo ; echo 
+# password=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)
+password=$(date | shasum | head -c 20)
 
 project_name="$user_name cloud"
 
